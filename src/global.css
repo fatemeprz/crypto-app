@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -21,4 +25,17 @@ body {
 a {
   text-decoration: inherit;
   color: inherit;
+}
+
+.notselected{
+  @apply border px-1 w-7 mx-1 border-darkName rounded-lg
+}
+.selected{
+  @apply  px-1 w-7 mx-1 bg-blue-700 rounded-lg
+}
+.active{
+  @apply bg-blue-700 w-18 px-2 py-0.5 mx-3 rounded-md
+}
+.notactive{
+  @apply bg-blue-700 w-18 px-2 py-0.5 mx-3 rounded-md opacity-30
 }
