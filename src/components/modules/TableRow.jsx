@@ -3,9 +3,12 @@ import ShortNumber from "../../helper/ShortNumber";
 import chartUp from "../../assets/chart-up.svg";
 import chartDown from "../../assets/chart-down.svg";
 import currencySymbol from "../../helper/CurrencySymbol";
+import { marketChart } from "../../services/CryptoApi";
+
 
 function TableRow({
   coin: {
+    id,
     image,
     symbol,
     name,
@@ -17,8 +20,15 @@ function TableRow({
   setChart,
   chart,
 }) {
-  const chartHandler=()=>{
-    setChart(id)
+  const chartHandler=async()=>{
+    try{
+
+      const res = await fetch(marketChart(id));
+      const json = await res.json();
+      setChart(json)
+    }catch(error){
+      setChart(error)
+    }
     
   }
   return (

@@ -9,4 +9,8 @@ const searchCoin=(query)=>{
   return `${BASE_URL}/search?query=${query}&${API_KEY}`
 }
 
-export {getCoinList,searchCoin}
+const marketChart=(id)=>{
+  return `${BASE_URL}/coins/${id}/market_chart?vs_currency=usd&days=1`
+}
+
+export {getCoinList,searchCoin,marketChart}
