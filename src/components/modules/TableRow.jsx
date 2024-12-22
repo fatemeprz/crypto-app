@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import ShortNumber from "../../helper/ShortNumber";
 import chartUp from "../../assets/chart-up.svg";
 import chartDown from "../../assets/chart-down.svg";
 import currencySymbol from "../../helper/CurrencySymbol";
 import { marketChart } from "../../services/CryptoApi";
-
 
 function TableRow({
   coin: {
@@ -15,22 +14,25 @@ function TableRow({
     current_price,
     price_change_percentage_24h: price_change,
     total_volume,
+    ath,
+    market_cap
   },
   currency,
   setChart,
   chart,
+  setCoinData,
+  coinData,
 }) {
-  const chartHandler=async()=>{
-    try{
-
+  const chartHandler = async () => {
+    try {
       const res = await fetch(marketChart(id));
       const json = await res.json();
-      setChart(json)
-    }catch(error){
-      setChart(error)
+      setChart(json);
+      setCoinData({ image, name, current_price, total_volume,ath, market_cap });
+    } catch (error) {
+      setChart(error);
     }
-    
-  }
+  };
   return (
     <>
       <tr className="border-b border-dark">
@@ -40,7 +42,7 @@ function TableRow({
             {symbol.toUpperCase()}
           </span>
         </td>
-        <td >{name}</td>
+        <td>{name}</td>
         <td>{`${currencySymbol(
           currency
         )} ${current_price.toLocaleString()}`}</td>

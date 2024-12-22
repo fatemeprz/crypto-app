@@ -3,18 +3,22 @@ import TableRow from "./TableRow";
 import { RotatingLines } from "react-loader-spinner";
 import Pagination from "./Pagination";
 
-function TableCoin({ coins, isLoading, currency, setChart, chart }) {
+function TableCoin({
+  coins,
+  isLoading,
+  currency,
+  setChart,
+  chart,
+  coinData,
+  setCoinData,
+}) {
+  
   return (
     <>
       <div>
         {isLoading ? (
           <div className="flex mr-auto justify-center h-screen  ">
-            
-            <RotatingLines
-              strokeColor="#3874ff"
-              strokeWidth="2"
-              width="60"
-            />
+            <RotatingLines strokeColor="#3874ff" strokeWidth="2" width="60" />
           </div>
         ) : (
           <table className="w-full mt-16 sm:overflow-x-scroll relative sm:px-4 z-10">
@@ -31,7 +35,15 @@ function TableCoin({ coins, isLoading, currency, setChart, chart }) {
 
             <tbody className="w-full">
               {coins.map((coin) => (
-                <TableRow key={coin.id} coin={coin} currency={currency} setChart={setChart} chart={chart} />
+                <TableRow
+                  key={coin.id}
+                  coin={coin}
+                  currency={currency}
+                  setChart={setChart}
+                  chart={chart}
+                  coinData={coinData}
+                  setCoinData={setCoinData}
+                />
               ))}
             </tbody>
           </table>

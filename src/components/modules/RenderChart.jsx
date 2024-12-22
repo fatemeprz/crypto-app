@@ -13,8 +13,8 @@ import formatedData from "../../helper/FormatedData";
 
 export default function RenderChart({ type, chart }) {
   return (
-    <div className="w-6/12 h-96 bg-nemodar border border-darkborder rounded-xl p-5">
-      <ResponsiveContainer width="100%" height="100%">
+    <>
+      <ResponsiveContainer width="100%" height="60%">
         <LineChart width={400} height={400} data={formatedData(chart, type)}>
           <Line
             type="monotone"
@@ -29,6 +29,6 @@ export default function RenderChart({ type, chart }) {
           <Tooltip />
         </LineChart>
       </ResponsiveContainer>
-    </div>
+    </>
   );
 }

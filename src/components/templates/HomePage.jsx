@@ -4,6 +4,7 @@ import TableCoin from "../modules/TableCoin";
 import { getCoinList } from "../../services/CryptoApi";
 import Pagination from "../modules/Pagination";
 import Chart from "../modules/Chart";
+import Banner from "../modules/Banner";
 
 function HomePage() {
   const [coins, setCoins] = useState([]);
@@ -11,6 +12,8 @@ function HomePage() {
   const [page, setPage] = useState(1);
   const [currency, setCurrency] = useState("usd");
   const [chart, setChart] = useState(null);
+  const [coinData, setCoinData] = useState({});
+
   useEffect(() => {
     const getData = async () => {
       try {
@@ -27,6 +30,7 @@ function HomePage() {
 
   return (
     <>
+      <Banner/>
       <Search currency={currency} setCurrency={setCurrency} />
       <TableCoin
         coins={coins}
@@ -34,9 +38,18 @@ function HomePage() {
         currency={currency}
         chart={chart}
         setChart={setChart}
+        coinData={coinData}
+        setCoinData={setCoinData}
       />
       <Pagination setPage={setPage} page={page} />
-      {chart && <Chart chart={chart} setChart={setChart} />}
+      {chart && (
+        <Chart
+          chart={chart}
+          setChart={setChart}
+          coinData={coinData}
+          setCoinData={setCoinData}
+        />
+      )}
     </>
   );
 }

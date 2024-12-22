@@ -54,7 +54,7 @@ function Search({ currency, setCurrency }) {
       <select
         onChange={currencyHandler}
         value={currency}
-        className=" ml-3 mt-32 bg-dark outline-none h-9 w-18 rounded-md pl-3"
+        className=" ml-3 mt-24 bg-dark outline-none h-9 w-18 rounded-md pl-3"
       >
         <option value="usd">USD</option>
         <option value="eur">EUR</option>

@@ -2,31 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-}
 
-body {
-  margin: auto;
-  max-width: 1200px;
-  min-height: 100vh;
-  padding: 10px;
-  background-color: #131315;
-  color: #fff;
+.body{
+  @apply m-auto max-w-normal min-h-screen p-3 bg-backgroundPrimary text-white
 }
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-a {
-  text-decoration: inherit;
-  color: inherit;
-}
-
 .notselected{
   @apply border px-1 w-7 mx-1 border-darkName rounded-lg
 }
@@ -34,8 +13,14 @@ a {
   @apply  px-1 w-7 mx-1 bg-blue-700 rounded-lg
 }
 .active{
-  @apply bg-blue-700 w-18 px-2 py-0.5 mx-3 rounded-md
+  @apply bg-blue-700 w-18 px-2 py-0.5 mx-3 rounded-md hover:transition duration-200 ease-out hover:bg-blue-600
 }
 .notactive{
   @apply bg-blue-700 w-18 px-2 py-0.5 mx-3 rounded-md opacity-30
+}
+.chart-buttens{
+  @apply border px-3 py-0.5 rounded-md border-bluePrimary mt-4 mr-4 text-bluePrimary
+}
+.selected-chart-buttens{
+  @apply border px-3 py-0.5 rounded-md border-bluePrimary mt-4 mr-4 bg-bluePrimary
 }
