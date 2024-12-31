@@ -12,6 +12,9 @@ export default {
         nemodar: "#18181ce6",
         bluePrimary: "#3874ff",
         backgroundPrimary: "#131315",
+        // backgroundPrimary: "linear-gradient(184deg, rgba(19,19,21,1) 0%, rgba(18,19,23,1) 0%, rgba(18,19,25,1) 0%, rgba(17,20,28,1) 25%, rgba(101,111,113,1) 100%)",
+        // backgroundPrimary: "#002244",
+
       },
       fontSize: {
         medium: "17px",

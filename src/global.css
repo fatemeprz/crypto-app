@@ -6,6 +6,7 @@
 .body{
   @apply m-auto max-w-normal min-h-screen p-3 bg-backgroundPrimary text-white
 }
+/* bg-gradient-to-r from-black from-10% via-darkbox via-40% to-backgroundPrimary to-80% */
 .notselected{
   @apply border px-1 w-7 mx-1 border-darkName rounded-lg
 }
@@ -23,4 +24,10 @@
 }
 .selected-chart-buttens{
   @apply border px-3 py-0.5 rounded-md border-bluePrimary mt-4 mr-4 bg-bluePrimary
+}
+.menu-list-notselected{
+  @apply mr-8 cursor-pointer hover:underline text-gray-300
+}
+.menu-list-selected{
+  @apply mr-8 cursor-pointer hover:underline text-bluePrimary
 }
