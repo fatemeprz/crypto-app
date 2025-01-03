@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import RenderChart from "./RenderChart";
 
+
 function Chart({
   chart,
   setChart,
@@ -15,7 +16,7 @@ function Chart({
     const typeButton = e.target.innerText.toLowerCase().split(" ").join("_");
     setType(typeButton);
   };
-
+  
   return (
     <div className="z-50 h-screen left-0 w-full  top-0 backdrop-blur-sm flex items-center justify-center fixed">
       <span

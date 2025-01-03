@@ -1,7 +1,10 @@
+import { millisecondsToDate } from "./formateDate"
+
 const formatedData=(data,type)=>{
+
    const newData=data[type].map(item=>{
     return{
-        date:item[0],
+        date:millisecondsToDate(item[0]),
         [type]:item[1]
     }
    })

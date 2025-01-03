@@ -5,7 +5,6 @@ import { getCoinList } from "../../services/CryptoApi";
 import Pagination from "../modules/Pagination";
 import Chart from "../modules/Chart";
 import Banner from "../modules/Banner";
-
 function HomePage() {
   const [coins, setCoins] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -27,6 +26,7 @@ function HomePage() {
     };
     getData();
   }, [page, currency]);
+
 
   return (
     <>

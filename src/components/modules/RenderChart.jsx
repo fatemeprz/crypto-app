@@ -12,6 +12,8 @@ import {
 import formatedData from "../../helper/FormatedData";
 
 export default function RenderChart({ type, chart }) {
+  console.log(formatedData(chart, type));
+
   return (
     <>
       <ResponsiveContainer width="100%" height="60%">
@@ -23,7 +25,7 @@ export default function RenderChart({ type, chart }) {
             strokeWidth="2px"
           />
           <CartesianGrid stroke="#404042" />
-          <XAxis dataKey="date" hide />
+          <XAxis dataKey="date" fontSize={"8px"}/>
           <Legend />
           <YAxis dataKey={type} domain={["auto", "auto"]} fontSize={"8px"} />
           <Tooltip />
