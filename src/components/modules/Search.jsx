@@ -70,6 +70,10 @@ function Search() {
   return (
     <>
       <div>
+        <div className="text-center mt-12">
+        <p className="text-blueCyan text-xl mb-5 ">Show Crypto</p>
+        <p className=" text-4xl  font-semibold">Crypto Market Trade And Metrics</p>
+        </div>
         <input
           className="bg-dark h-9 w-56 rounded-md pl-3 outline-none"
           type="text"

@@ -5,7 +5,7 @@ function Banner() {
   return (
     <div className="h-110 mt-20 flex items-center justify-between">
       <div>
-        <h1 className="font-serif text-5xl font-bold mb-8 w-4/6 leading-normal">
+        <h1 className=" text-5xl font-bold mb-8 w-4/6 leading-normal">
           Best place buy and sell{" "}
           <span className="text-bluePrimary">crypto currency</span> asset
         </h1>

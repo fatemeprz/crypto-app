@@ -1,4 +1,3 @@
-import React from 'react'
 import { SiHiveBlockchain } from "react-icons/si";
 import { FaHeart } from "react-icons/fa";
 
@@ -8,7 +7,7 @@ function Layout({children}) {
     <header className="flex items-center  justify-between h-16 px-6 rounded-xl">
     <div className="flex">
       <SiHiveBlockchain className="text-3xl text-bluePrimary mr-3"  />
-      <h1 className="font-bold text-lg text-bluePrimary ">Crypto App</h1>
+      <h1 className="font-serif font-bold text-lg text-bluePrimary ">Crypto App</h1>
     </div>
     <ul className="flex">
     <li className="menu-list-selected">Home</li>
