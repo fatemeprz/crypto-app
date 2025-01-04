@@ -1,34 +1,36 @@
-import React, { useState } from "react";
+import { useContext } from "react";
 import ShortNumber from "../../helper/ShortNumber";
 import chartUp from "../../assets/chart-up.svg";
 import chartDown from "../../assets/chart-down.svg";
 import currencySymbol from "../../helper/CurrencySymbol";
 import { marketChart } from "../../services/CryptoApi";
+import { CoinContext } from "../../Context/CoinProvider";
 
-function TableRow({
-  coin: {
-    id,
-    image,
-    symbol,
-    name,
-    current_price,
-    price_change_percentage_24h: price_change,
-    total_volume,
-    ath,
-    market_cap
-  },
-  currency,
-  setChart,
-  chart,
-  setCoinData,
-  coinData,
-}) {
+function TableRow({ setChart, coin:{ id,
+  image,
+  symbol,
+  name,
+  current_price,
+  price_change_percentage_24h: price_change,
+  total_volume,
+  ath,
+  market_cap,}, setCoinData }) {
+    
+  const { currency } = useContext(CoinContext);
+
   const chartHandler = async () => {
     try {
       const res = await fetch(marketChart(id));
       const json = await res.json();
       setChart(json);
-      setCoinData({ image, name, current_price, total_volume,ath, market_cap });
+      setCoinData({
+        image,
+        name,
+        current_price,
+        total_volume,
+        ath,
+        market_cap,
+      });
     } catch (error) {
       setChart(error);
     }

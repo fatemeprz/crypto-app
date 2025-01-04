@@ -1,11 +1,14 @@
 import Layout from "./components/Layout/Layout";
 import HomePage from "./components/templates/HomePage";
+import CoinProvider from "./Context/CoinProvider";
 
 function App() {
   return (
     <>
       <Layout>
-        <HomePage/>
+        <CoinProvider>
+          <HomePage />
+        </CoinProvider>
       </Layout>
     </>
   );

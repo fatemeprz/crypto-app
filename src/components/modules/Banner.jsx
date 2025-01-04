@@ -1,4 +1,3 @@
-import React from "react";
 import bannerImage from "../../assets/bannercoin.png";
 import { VscTriangleRight } from "react-icons/vsc";
 

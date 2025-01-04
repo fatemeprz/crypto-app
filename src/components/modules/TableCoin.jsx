@@ -1,22 +1,14 @@
-import React from "react";
+import { useContext } from "react";
 import TableRow from "./TableRow";
 import { RotatingLines } from "react-loader-spinner";
-import Pagination from "./Pagination";
+import { CoinContext } from "../../Context/CoinProvider";
 
-function TableCoin({
-  coins,
-  isLoading,
-  currency,
-  setChart,
-  chart,
-  coinData,
-  setCoinData,
-}) {
-  
+function TableCoin({ setChart, chart, coinData, setCoinData }) {
+  const { coins } = useContext(CoinContext);
   return (
     <>
       <div>
-        {isLoading ? (
+        {coins.isLoading ? (
           <div className="flex mr-auto justify-center h-screen  ">
             <RotatingLines strokeColor="#3874ff" strokeWidth="2" width="60" />
           </div>
@@ -34,11 +26,10 @@ function TableCoin({
             </thead>
 
             <tbody className="w-full">
-              {coins.map((coin) => (
+              {coins.data.map((coin) => (
                 <TableRow
                   key={coin.id}
                   coin={coin}
-                  currency={currency}
                   setChart={setChart}
                   chart={chart}
                   coinData={coinData}
