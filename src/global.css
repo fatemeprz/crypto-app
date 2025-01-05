@@ -4,7 +4,7 @@
 
 
 .body{
-  @apply m-auto max-w-normal min-h-screen p-3 bg-backgroundPrimary text-white
+  @apply min-h-screen bg-backgroundPrimary text-white
 }
 /* bg-gradient-to-r from-black from-10% via-darkbox via-40% to-backgroundPrimary to-80% */
 .notselected{

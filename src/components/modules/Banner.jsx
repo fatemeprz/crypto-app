@@ -3,7 +3,7 @@ import { VscTriangleRight } from "react-icons/vsc";
 
 function Banner() {
   return (
-    <div className="h-110 mt-20 flex items-center justify-between">
+    <div className=" h-110 mt-20 flex items-center justify-between">
       <div>
         <h1 className=" text-5xl font-bold mb-8 w-4/6 leading-normal">
           Best place buy and sell{" "}
@@ -23,10 +23,10 @@ function Banner() {
             Get started
           </button>
           <span className="flex items-center relative">
-            <span className=" w-40 ml-10 py-2.5 pl-4 rounded-md mt-8 hover:transition duration-200 ease-out border border-bluePrimary cursor-pointer hover:text-bluePrimary">
+            <span className="font-serif w-40 ml-10 py-2.5 pl-4 rounded-md mt-8 hover:transition duration-200 ease-out border border-bluePrimary cursor-pointer hover:text-bluePrimary">
               Watch Tutorial
             </span>
-            <VscTriangleRight className="text-2xl absolute right-3 bottom-3 text-bluePrimary" />
+            <VscTriangleRight className="text-2xl absolute right-2 bottom-3 text-bluePrimary" />
           </span>
         </div>
       </div>
