@@ -33,8 +33,8 @@ function Layout({ children }) {
         </header>
         <div className="min-h-screen">{children}</div>
       </div>
-      <footer className=" bg-blue-900 h-64 px-6">
-        <div className="max-w-normal m-auto flex py-5 justify-between">
+      <footer className=" bg-blue-900 h-72 px-6">
+        <div className="max-w-normal m-auto flex py-9 justify-between">
           <div className="w-72">
             <div className="flex">
               <SiHiveBlockchain className="text-3xl  mr-3" />
@@ -69,9 +69,9 @@ function Layout({ children }) {
           </ul>
           <ul>
             <li className="font-semibold text-lg mb-6 my-2">Contact</li>
-            <li className="flex items-center cursor-pointer hover:underline  my-2"><span><GrPhone className="text-2xl mr-2" /></span><span>(205)555-0100</span></li>
-            <li className="flex items-center cursor-pointer hover:underline  my-2"><span><CiClock2 className="text-2xl mr-2" /></span><span>Mon-Fri: 9 am - 17 pm</span></li>
-            <li className="flex items-center cursor-pointer  hover:underline my-2"><span><AiOutlineMail className="text-2xl mr-2" /></span><span>Email@Coinapp.com</span></li>
+            <li className="flex items-center cursor-pointer hover:underline mt-2 mb-3"><span><GrPhone className="text-2xl mr-2" /></span><span>(205)555-0100</span></li>
+            <li className="flex items-center cursor-pointer hover:underline  my-3"><span><CiClock2 className="text-2xl mr-2" /></span><span>Mon-Fri: 9 am - 17 pm</span></li>
+            <li className="flex items-center cursor-pointer  hover:underline my-3"><span><AiOutlineMail className="text-2xl mr-2" /></span><span>Email@Coinapp.com</span></li>
           </ul>
         </div>
       </footer>
