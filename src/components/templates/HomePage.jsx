@@ -5,6 +5,7 @@ import Pagination from "../modules/Pagination";
 import Chart from "../modules/Chart";
 import Banner from "../modules/Banner";
 import WhyUs from "../WhyUs";
+import StartNow from "../modules/StartNow";
 
 function HomePage() {
   const [chart, setChart] = useState(null);
@@ -30,6 +31,7 @@ function HomePage() {
           setChart={setChart}
         />
       )}
+      <StartNow/>
     </>
   );
 }
