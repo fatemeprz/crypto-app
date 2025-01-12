@@ -4,7 +4,7 @@ import { RotatingLines } from "react-loader-spinner";
 import { CoinContext } from "../../Context/CoinProvider";
 
 function TableCoin({ setChart, chart, coinData, setCoinData }) {
-  const { coins } = useContext(CoinContext);
+  const { coins }  = useContext(CoinContext);
   return (
     <>
       <div>

@@ -1,5 +1,6 @@
 
-function SearchBox({ coins }) {
+function SearchBox({ coinsList:{coins} }) {
+ 
   
   return (
     <>

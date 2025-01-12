@@ -14,7 +14,7 @@ function StartNow() {
         </p>
         <div>
           <input
-            className="my-8 py-1 px-4 text-black outline-none rounded-s-xl w-64 h-10"
+            className="my-8 py-1 px-4 text-black outline-none rounded-s-xl w-60 h-10"
             type="text"
             placeholder="Enter your email"
           />

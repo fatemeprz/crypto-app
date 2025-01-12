@@ -3,6 +3,7 @@ import { searchCoin } from "../../services/CryptoApi";
 import SearchBox from "./SearchBox";
 import { RotatingLines } from "react-loader-spinner";
 import { CoinContext } from "../../Context/CoinProvider";
+import axios from "axios";
 
 const initialState = {
   data: [],
@@ -38,12 +39,12 @@ function Search() {
     const controller = new AbortController();
     const seachData = async () => {
       try {
-        const res = await fetch(searchCoin(search), {
+        const res = await axios.get(searchCoin(search), {
           signal: controller.signal,
         });
-        const data = await res.json();
-        if (data.coins) {
-          dispatch({ type: "SUCCESS", payload: data.coins });
+        
+        if (res.data.coins.length>0) {
+          dispatch({ type: "SUCCESS", payload: res.data });
         }
       } catch (error) {
         if (error.name !== "AbortError") {
@@ -96,15 +97,15 @@ function Search() {
         <div className="w-64 h-80 bg-darkbox border p-2 rounded border-gray-700 mt-2 z-20 absolute overflow-y-auto scrollbar">
           {coins.isLoading ? (
             <div className="flex mr-auto justify-center h-full">
-              {" "}
+              
               <RotatingLines
                 strokeColor="#3874ff"
                 strokeWidth="2"
                 width="60"
-              />{" "}
+              />
             </div>
           ) : (
-            <SearchBox coins={coins.data} />
+            <SearchBox coinsList={coins.data} />
           )}
         </div>
       )}
