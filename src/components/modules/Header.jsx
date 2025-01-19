@@ -9,7 +9,7 @@ function Header() {
   return (
     <header>
       <nav className="flex items-center justify-between h-16 rounded-xl">
-        <div className={`${isShow ? "hidden" : "flex items-center"}`}>
+        <div className={`${isShow ? "hidden md:flex" : "flex items-center"}`}>
           <SiHiveBlockchain className="md:text-3xl text-xl text-bluePrimary mr-3" />
           <span className="font-serif font-bold text-lg lg:text-xl text-bluePrimary ">
             Crypto App
@@ -21,6 +21,7 @@ function Header() {
           } lg:hidden text-3xl cursor-pointer`}
           onClick={() => {
             setIsShow((isShow) => !isShow);
+            
           }}
         >
           <RxHamburgerMenu />
@@ -42,10 +43,10 @@ function Header() {
       <div
         className={`${
           isShow
-            ? "fixed z-30 transform mt-0 top-0 right-0 transition w-6/12 h-screen duration-150 ease-in animate-bounce-right"
+            ? "fixed z-30 transform mt-0 top-0 right-0 transition w-2/3 md:w-96 h-screen duration-150 ease-in animate-bounce-right"
             : "hidden"
         }
-         sm:hidden bg-bluePrimary w-full p-5`}
+         bg-bluePrimary p-5`}
       >
         <span
           onClick={() => {
