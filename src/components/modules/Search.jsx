@@ -42,8 +42,8 @@ function Search() {
         const res = await axios.get(searchCoin(search), {
           signal: controller.signal,
         });
-        
-        if (res.data.coins.length>0) {
+
+        if (res.data.coins.length > 0) {
           dispatch({ type: "SUCCESS", payload: res.data });
         }
       } catch (error) {
@@ -72,11 +72,13 @@ function Search() {
     <>
       <div>
         <div className="text-center mt-12">
-        <p className="text-blueCyan text-xl mb-5 ">Show Crypto</p>
-        <p className=" text-4xl  font-semibold">Crypto Market Trade And Metrics</p>
+          <p className="text-blueCyan text-xl mb-5 ">Show Crypto</p>
+          <p className=" text-4xl  font-semibold">
+            Crypto Market Trade And Metrics
+          </p>
         </div>
         <input
-          className="bg-dark h-9 w-56 rounded-md pl-3 outline-none"
+          className="bg-dark h-9 w-40 sm:w-56 rounded-md pl-3 outline-none"
           type="text"
           placeholder="Search"
           onChange={searchHandler}
@@ -85,7 +87,7 @@ function Search() {
         <select
           onChange={currencyHandler}
           value={currency}
-          className=" ml-3 mt-24 bg-dark outline-none h-9 w-18 rounded-md pl-3"
+          className=" ml-3 mt-24 bg-dark outline-none h-9 w-14 pl-1 text-sm sm:w-18 rounded-md sm:pl-3"
         >
           <option value="usd">USD</option>
           <option value="eur">EUR</option>
@@ -97,12 +99,7 @@ function Search() {
         <div className="w-64 h-80 bg-darkbox border p-2 rounded border-gray-700 mt-2 z-20 absolute overflow-y-auto scrollbar">
           {coins.isLoading ? (
             <div className="flex mr-auto justify-center h-full">
-              
-              <RotatingLines
-                strokeColor="#3874ff"
-                strokeWidth="2"
-                width="60"
-              />
+              <RotatingLines strokeColor="#3874ff" strokeWidth="2" width="60" />
             </div>
           ) : (
             <SearchBox coinsList={coins.data} />

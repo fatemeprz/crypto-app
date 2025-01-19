@@ -44,15 +44,15 @@ function TableRow({ setChart, coin:{ id,
             {symbol.toUpperCase()}
           </span>
         </td>
-        <td>{name}</td>
+        <td className="hidden sm:table-cell" >{name}</td>
         <td>{`${currencySymbol(
           currency
         )} ${current_price.toLocaleString()}`}</td>
         <td className={price_change > 0 ? "text-green-600" : "text-red-600"}>
           {ShortNumber(price_change)}%
         </td>
-        <td>{total_volume.toLocaleString()}</td>
-        <td>
+        <td className="hidden sm:table-cell">{total_volume.toLocaleString()}</td>
+        <td className="hidden md:table-cell">
           <img src={price_change > 0 ? chartUp : chartDown} />
         </td>
       </tr>

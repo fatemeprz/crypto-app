@@ -24,7 +24,7 @@ function WhyUs() {
         atque.
       </p>
       </div>
-      <div className="grid grid-rows-1 grid-cols-4 gap-7 ">
+      <div className="grid  w-11/12 sm:w-full m-auto lg:grid-rows-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7 ">
         {cards.map((item) => (
           <WhyUSCards key={item.id} cards={item} />
         ))}

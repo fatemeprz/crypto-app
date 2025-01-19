@@ -26,16 +26,19 @@ function Chart({
         onClick={() => {
           setChart(null);
         }}
-        className="absolute left-10 top-5 bg-red-700 px-2 py-0.5 rounded font-semibold cursor-pointer"
+        className="absolute w-7 text-center right-10 top-5 md:left-10 md:top-5 md-left-5 bg-red-700  py-0.5 rounded font-semibold cursor-pointer"
       >
         X
       </span>
-      <div className="w-6/12 h-110 bg-nemodar border border-darkborder rounded-xl p-5">
-        <div className="mb-6 flex items-center">
+      <div className="w-full h-screen  px-5 overflow-y-scroll content-center scrollbar-none  md:w-8/12 py-5 md:h-[460px] bg-nemodar border border-darkborder rounded-xl">
+        <div className="mb-14 md:mb-6 flex items-center">
           <img className="h-9 mr-4" src={image} alt="coin-logo" />{" "}
-          <p className="font-semibold text-2xl">{name}</p>
+          <p className="font-semibold text-lg  md:text-2xl">{name}</p>
         </div>
+       
+
         <RenderChart type={type} chart={chart} />
+        
         <button
           onClick={clickHandler}
           className={
@@ -66,7 +69,7 @@ function Chart({
         >
           Prices
         </button>
-        <div className="mt-8 flex justify-between">
+        <div className=" mt-8 flex  justify-between">
           <p>
             <span className="text-bluePrimary font-bold">Price: </span>
             <span>${price.toLocaleString()}</span>

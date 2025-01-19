@@ -31,6 +31,35 @@ export default {
         normal:"1200px"
       }
     },
+    keyframes: {
+      bounceRight: {
+        '0%': {
+          transform: 'translateX(100%)',
+          opacity:"0"
+        },
+        '100%': {
+          transform: 'translateX(0)',
+          opacity:"1"
+        },
+      },
+      bounceLeft: {
+        '0%': {
+          transform: 'translateX(-0%)',
+          opacity:"1"
+        },
+        '100%': {
+          transform: 'translateX(100%)',
+          opacity:"0"
+        },
+      },
+      
+    },
+    animation:{
+      "bounce-right":"bounceRight 2s 1",
+      "bounce-left":"bounceLeft 2s 1",
+
+    }
+
   },
   plugins: [require("tailwind-scrollbar")],
 };
