@@ -1,7 +1,7 @@
 {
   "homepage": "https://fatemeprz.github.io/crypto-app",
   "name": "crypto-app",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
